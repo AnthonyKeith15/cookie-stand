@@ -15,9 +15,13 @@ let seattleStore = {
     for (let i = 0; i < this.hours.length; i++){
       this.salesByHour.push(this.calcCookiesSold())
     }
+    return this.salesByHour;
   },
-
+  calcSumOfSales: function() {
+    let runningTotal = 0;
+    for (let i = 0; i < this.salesByHour.length; i++) {
+      return runningTotal += parseInt(this.salesByHour[i]);
+    }
+    return runningTotal;
+  }
 };
-
-seattleStore.calcSalesByHour();
-console.log(seattleStore.salesByHour);
