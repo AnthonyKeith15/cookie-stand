@@ -141,7 +141,9 @@ let limaStore = {
 function addToList(storeLocation) {
   // creates the list itself
   let myList = document.createElement('ul');
+  // creates the h3 element itself
   let myTitle = document.createElement('h3')
+  // somehow these two lines generate the location inside my element
   myTitle.appendChild(document.createTextNode(storeLocation.location))
   myList.appendChild(myTitle)
 
@@ -174,5 +176,4 @@ let storeArr = [seattleStore, tokyoStore, dubaiStore, parisStore, limaStore]
 for (let k = 0; k < storeArr.length; k++){
   generateSalesReport(storeArr[k]);
 }
-
 
