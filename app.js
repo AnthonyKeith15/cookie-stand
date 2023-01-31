@@ -5,19 +5,19 @@ let seattleStore = {
   maxCust: 65,
   aveOrderSize: 6.3,
   salesByHour: [],
-  calcRandNumOfCust: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust); 
+  calcRandNumOfCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
-  calcCookiesSold: function() {
+  calcCookiesSold: function () {
     return Math.floor(this.calcRandNumOfCust() * this.aveOrderSize);
   },
-  calcSalesByHour: function() {
-    for (let i = 0; i < this.hours.length; i++){
+  calcSalesByHour: function () {
+    for (let i = 0; i < this.hours.length; i++) {
       this.salesByHour.push(this.calcCookiesSold())
     }
     return this.salesByHour;
   },
-  calcSumOfSales: function() {
+  calcSumOfSales: function () {
     let runningTotal = 0;
     for (let i = 0; i < this.salesByHour.length; i++) {
       return runningTotal += parseInt(this.salesByHour[i]);
@@ -33,19 +33,19 @@ let tokyoStore = {
   maxCust: 24,
   aveOrderSize: 1.2,
   salesByHour: [],
-  calcRandNumOfCust: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust); 
+  calcRandNumOfCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
-  calcCookiesSold: function() {
+  calcCookiesSold: function () {
     return Math.floor(this.calcRandNumOfCust() * this.aveOrderSize);
   },
-  calcSalesByHour: function() {
-    for (let i = 0; i < this.hours.length; i++){
+  calcSalesByHour: function () {
+    for (let i = 0; i < this.hours.length; i++) {
       this.salesByHour.push(this.calcCookiesSold())
     }
     return this.salesByHour;
   },
-  calcSumOfSales: function() {
+  calcSumOfSales: function () {
     let runningTotal = 0;
     for (let i = 0; i < this.salesByHour.length; i++) {
       return runningTotal += parseInt(this.salesByHour[i]);
@@ -61,19 +61,19 @@ let dubaiStore = {
   maxCust: 38,
   aveOrderSize: 3.7,
   salesByHour: [],
-  calcRandNumOfCust: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust); 
+  calcRandNumOfCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
-  calcCookiesSold: function() {
+  calcCookiesSold: function () {
     return Math.floor(this.calcRandNumOfCust() * this.aveOrderSize);
   },
-  calcSalesByHour: function() {
-    for (let i = 0; i < this.hours.length; i++){
+  calcSalesByHour: function () {
+    for (let i = 0; i < this.hours.length; i++) {
       this.salesByHour.push(this.calcCookiesSold())
     }
     return this.salesByHour;
   },
-  calcSumOfSales: function() {
+  calcSumOfSales: function () {
     let runningTotal = 0;
     for (let i = 0; i < this.salesByHour.length; i++) {
       return runningTotal += parseInt(this.salesByHour[i]);
@@ -89,19 +89,19 @@ let parisStore = {
   maxCust: 38,
   aveOrderSize: 2.3,
   salesByHour: [],
-  calcRandNumOfCust: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust); 
+  calcRandNumOfCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
-  calcCookiesSold: function() {
+  calcCookiesSold: function () {
     return Math.floor(this.calcRandNumOfCust() * this.aveOrderSize);
   },
-  calcSalesByHour: function() {
-    for (let i = 0; i < this.hours.length; i++){
+  calcSalesByHour: function () {
+    for (let i = 0; i < this.hours.length; i++) {
       this.salesByHour.push(this.calcCookiesSold())
     }
     return this.salesByHour;
   },
-  calcSumOfSales: function() {
+  calcSumOfSales: function () {
     let runningTotal = 0;
     for (let i = 0; i < this.salesByHour.length; i++) {
       return runningTotal += parseInt(this.salesByHour[i]);
@@ -116,19 +116,19 @@ let limaStore = {
   maxCust: 16,
   aveOrderSize: 4.6,
   salesByHour: [],
-  calcRandNumOfCust: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust); 
+  calcRandNumOfCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
-  calcCookiesSold: function() {
+  calcCookiesSold: function () {
     return Math.floor(this.calcRandNumOfCust() * this.aveOrderSize);
   },
-  calcSalesByHour: function() {
-    for (let i = 0; i < this.hours.length; i++){
+  calcSalesByHour: function () {
+    for (let i = 0; i < this.hours.length; i++) {
       this.salesByHour.push(this.calcCookiesSold())
     }
     return this.salesByHour;
   },
-  calcSumOfSales: function() {
+  calcSumOfSales: function () {
     let runningTotal = 0;
     for (let i = 0; i < this.salesByHour.length; i++) {
       return runningTotal += parseInt(this.salesByHour[i]);
@@ -136,3 +136,18 @@ let limaStore = {
     return runningTotal;
   }
 };
+
+seattleStore.calcSalesByHour();
+let i = 0;
+let totalSales = seattleStore.calcSumOfSales();
+const myList = document.getElementById('city');
+let item = document.createElement('li');
+//myList.appendChild(item);
+
+item.textContent = seattleStore.salesByHour[i];
+console.log(seattleStore.salesByHour);
+console.log(seattleStore.salesByHour.length);
+for (let i = 0; i < seattleStore.salesByHour.length; i++) {
+  console.log(myList.appendChild(item));
+}
+
