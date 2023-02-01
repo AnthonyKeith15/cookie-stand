@@ -1,6 +1,6 @@
 'use strict'
 
-function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
+function FranchiseLocation(location, minCust, maxCust, aveOrderSize) {
   this.storeLocation = location;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -58,11 +58,11 @@ function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
 // global variable hours
 let hours = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
 // All object instances initialized here
-let seattleFranchiseLocation = new franchiseLocation('Seattle', 23, 65, 6.3);
-let tokyoFranchiseLocation = new franchiseLocation('Tokyo', 3, 24, 1.2);
-let dubaiFranchiseLocation = new franchiseLocation('Dubai', 11, 38, 3.7);
-let parisFranchiseLocation = new franchiseLocation('Paris', 20, 38, 2.3);
-let limaFranchiseLocation = new franchiseLocation('Lima', 2, 16, 4.6);
+let seattleFranchiseLocation = new FranchiseLocation('Seattle', 23, 65, 6.3);
+let tokyoFranchiseLocation = new FranchiseLocation('Tokyo', 3, 24, 1.2);
+let dubaiFranchiseLocation = new FranchiseLocation('Dubai', 11, 38, 3.7);
+let parisFranchiseLocation = new FranchiseLocation('Paris', 20, 38, 2.3);
+let limaFranchiseLocation = new FranchiseLocation('Lima', 2, 16, 4.6);
 
 function createHeading(){
   // Selects the html element table
@@ -134,7 +134,7 @@ function createFooter() {
     footerRow.appendChild(totalByHour);
   }
   //Calculate Total for All Locations
-  let sumOfAllStores = 0
+  let sumOfAllStores = 0;
   for (let i = 0; i < allFranchisesArr.length; i++) {
     sumOfAllStores += allFranchisesArr[i].calcSumOfHourlySales();
   }
