@@ -1,3 +1,5 @@
+'use strict'
+
 function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
   this.storeLocation = location;
   this.minCust = minCust;
@@ -5,13 +7,13 @@ function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
   this.aveOrderSize = aveOrderSize;
   this.hours = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
   this.salesByHour = [];
-  this.calcRandNumOfCust = function() {
+  this.calcRandNumOfCust = function () {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   };
-  this.calcCookiesSold = function() {
+  this.calcCookiesSold = function () {
     return Math.floor(this.calcRandNumOfCust() * this.aveOrderSize);
   };
-  this.calcHourlySales = function() {
+  this.calcHourlySales = function () {
     for (let i = 0; i < this.hours.length; i++) {
       this.salesByHour.push(this.calcCookiesSold());
     }
@@ -24,51 +26,32 @@ function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
     }
     return runningTotal;
   };
+  this.renderTable = function() {
+    let salesTable = document.querySelector('table');
+    let tr = document.createElement('tr');
+    let tdName = document.createElement('td');
+    tdName.textContent = this.storeLocation;
+    for (let i = 0; i < this.hours.length; i++){
+      let td = document.createElement('td');
+      td.textContent = this.salesByHour[i];
+      tr.appendChild(td);
+    }
+    salesTable.appendChild(tr);
+  };
+};
+
+let seattleFranchiseLocation = new franchiseLocation('Seattle', 23, 65, 6.3);
+let tokyoFranchiseLocation = new franchiseLocation('Tokyo', 3, 24, 1.2);
+let dubaiFranchiseLocation = new franchiseLocation('Dubai', 11, 38, 3.7);
+let parisFranchiseLocation = new franchiseLocation('Paris', 20, 38, 2.3);
+let limaFranchiseLocation = new franchiseLocation('Lima', 2, 16, 4.6);
+
+let franchiseArray = [seattleFranchiseLocation, tokyoFranchiseLocation, dubaiFranchiseLocation, parisFranchiseLocation, limaFranchiseLocation]
+
+for (let i = 0; i < franchiseArray.length; i++){
+  let franchise = franchiseArray[i];
+  franchise.calcHourlySales();
+  franchise.renderTable();
 }
 
-function addToList(storeLocation) {
-  // creates the list itself
-  let myList = document.createElement('ul');
-  // creates the h3 element itself
-  let myTitle = document.createElement('h3')
-  // somehow these two lines generate the location inside my element
-  myTitle.appendChild(document.createTextNode(storeLocation.location));
-  myList.appendChild(myTitle);
-
-  for (let i = 0; i < storeLocation.salesByHour.length; i++) {
-    // creates the li element
-    let item = document.createElement('li');
-    // creates the content by using index of i
-    item.appendChild(document.createTextNode(`${storeLocation.hours[i]}: ${storeLocation.salesByHour[i]} cookies`));
-    // adds it to the list
-    myList.appendChild(item);
-  }
-  // OUTSIDE of the loop total the sales and return the full list
-  // creates the li itself and saves as variable named item
-  let item = document.createElement('li');
-  // creates the content by using index of i
-  item.appendChild(document.createTextNode(`Total: ${storeLocation.calcSumOfHourlySales()} cookies`));
-  // adds it to the list
-  myList.appendChild(item);
-  return myList;
-}
-
-function generateSalesReport(storeLocation) {
-  storeLocation.calcHourlySales();
-  storeLocation.calcSumOfHourlySales();
-  salesList.appendChild(addToList(storeLocation));
-}
-let salesList = document.getElementById('sales');
-
-
-
-let seattleFranchiseLocation = new franchiseLocation (
-  'Seattle',
-  2,
-  9,
-  4
-)
-console.log(seattleFranchiseLocation.storeLocation);
-console.log(seattleFranchiseLocation.calcRandNumOfCust());
-generateSalesReport(seattleFranchiseLocation); 
 
