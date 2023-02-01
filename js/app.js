@@ -26,12 +26,12 @@ function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
     }
     return runningTotal;
   };
-  this.renderTable = function() {
+  this.renderTable = function () {
     let salesTable = document.querySelector('table');
     let tr = document.createElement('tr');
     let tdName = document.createElement('td');
     tdName.textContent = this.storeLocation;
-    for (let i = 0; i < this.hours.length; i++){
+    for (let i = 0; i < this.hours.length; i++) {
       let td = document.createElement('td');
       td.textContent = this.salesByHour[i];
       tr.appendChild(td);
@@ -39,6 +39,9 @@ function franchiseLocation(location, minCust, maxCust, aveOrderSize) {
     salesTable.appendChild(tr);
   };
 };
+
+
+
 
 let seattleFranchiseLocation = new franchiseLocation('Seattle', 23, 65, 6.3);
 let tokyoFranchiseLocation = new franchiseLocation('Tokyo', 3, 24, 1.2);
@@ -48,10 +51,33 @@ let limaFranchiseLocation = new franchiseLocation('Lima', 2, 16, 4.6);
 
 let franchiseArray = [seattleFranchiseLocation, tokyoFranchiseLocation, dubaiFranchiseLocation, parisFranchiseLocation, limaFranchiseLocation]
 
-for (let i = 0; i < franchiseArray.length; i++){
+for (let i = 0; i < franchiseArray.length; i++) {
+  let franchise = franchiseArray[i];
+  franchise.calcHourlySales();
+}
+function createHoursHeading(franchise) {
+  let myHeading = document.getElementById('hours')
+  let th = document.createElement('th')
+  for (let i = 0; i < franchise.hours.length; i++) {
+    let tdName = document.createElement('td')
+    tdName.textContent = franchise.hours[i];
+    myHeading.appendChild(tdName);
+  }
+}
+
+createHoursHeading(seattleFranchiseLocation);
+
+for (let i = 0; i < franchiseArray.length; i++) {
   let franchise = franchiseArray[i];
   franchise.calcHourlySales();
   franchise.renderTable();
 }
 
+function calcTotalByHour(franchise) {
+  let runningTotal = 0;
+  for (let i = 0; i < franchise.length; i++) {
+    let franchiseSales = franchise[i];
+    }
+  }
 
+calcTotalByHour(franchiseArray);
