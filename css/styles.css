@@ -1,0 +1,77 @@
+:root {
+  --primaryColor: #8f5e2f;
+  --secondaryColor: #d3905e;
+  --accentColor: #f5f0e9;
+}
+* {
+  padding: 0;
+  margin: 0;
+  color: var(--accentColor);
+}
+
+nav {
+  background-color: var(--secondaryColor);
+  width: 100vw;
+  height: 9vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav img {
+  width: 200px;
+  height: 70px;
+}
+
+body {
+  background-color: var(--primaryColor);
+}
+.heroPage {
+  width: 90vw;
+  height: 60vh;
+  margin: 3% auto;
+  display: flex;
+  justify-content: center;
+}
+
+.heroPage img {
+  width: 50%;
+}
+
+.salmonCookieInfo {
+  width: 50%;
+  background-color: var(--secondaryColor);
+  color: var(--accentColor);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.locations {
+  width: 95vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 1vw;
+}
+
+#locationInfo {
+  background-color: var(--secondaryColor);
+  width: 95%;
+  height: 20vh;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#locationInfo h4 {
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+
+#locationInfo h5 {
+  font-size: 1.1rem;
+}
