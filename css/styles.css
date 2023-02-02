@@ -119,3 +119,37 @@ body {
 .leftSideText p {
   font-size: 1.1rem;
 }
+
+#merchHeader{ 
+  margin: 30px auto;
+  width: 60vw;
+  background-color: var(--secondaryColor);
+  font-size: 3rem;
+  text-align: center;
+}
+.merch {
+  width: 100vw;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+.merch h3 {
+  width: 75vw;
+}
+
+.forSaleItems img {
+  height: 175px;
+  width: 175px;
+}
+
+.forSaleItems p {
+  font-size: small;
+}
+
+footer {
+  height: 6vh;
+  width: 100vw;
+  background-color: var(--secondaryColor);
+  margin-top: 30px;
+}
