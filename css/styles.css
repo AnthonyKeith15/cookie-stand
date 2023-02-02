@@ -2,11 +2,23 @@
   --primaryColor: #8f5e2f;
   --secondaryColor: #d3905e;
   --accentColor: #f5f0e9;
+    font-family: 'Itim', cursive, sans-serif;
 }
 * {
   padding: 0;
   margin: 0;
   color: var(--accentColor);
+}
+
+a {
+  text-decoration: none;
+  font-size: medium;
+  transition: 350ms;
+}
+
+a:hover {
+  font-size: larger;
+  transition: 350ms;
 }
 
 nav {
@@ -31,7 +43,7 @@ body {
 }
 .heroPage {
   width: 90vw;
-  height: 60vh;
+  height: 50vh;
   margin: 3% auto;
   display: flex;
   justify-content: center;
