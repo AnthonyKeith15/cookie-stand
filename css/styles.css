@@ -10,12 +10,15 @@
 }
 
 nav {
+  position: fixed;
+  top: 0px;
   background-color: var(--secondaryColor);
   width: 100vw;
   height: 9vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid black;
 }
 
 nav img {
@@ -36,6 +39,10 @@ body {
 
 .heroPage img {
   width: 50%;
+}
+
+.heroPage h1 {
+  font-size: 4rem;
 }
 
 .salmonCookieInfo {
@@ -73,5 +80,42 @@ body {
 }
 
 #locationInfo h5 {
+  font-size: 1.1rem;
+}
+
+.about {
+  background-color: var(--secondaryColor);
+  width: 80vw;
+  height: 60vh;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.about img {
+  width: 49%;
+}
+.about h3 {
+  font-size: 2rem;
+}
+
+.leftSideText {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: justify;
+  padding-left:  15px;
+}
+
+.leftSideText h3 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.leftSideText p {
   font-size: 1.1rem;
 }
