@@ -199,12 +199,13 @@ let handleSubmit = function(event) {
   //Grabs user data after the submit button is pressed
   // event.target.<name-of-label>.value
   let newLocationName = event.target.location.value;
-  let newMinCust = event.target.minCust.value;
-  let newMaxCust = event.target.maxCust.value;
-  let newAveOrderSize = event.target.aveOrder.value;
+  let newMinCust = parseInt(event.target.minCust.value);
+  let newMaxCust = parseInt(event.target.maxCust.value);
+  let newAveOrderSize = parseInt(event.target.aveOrder.value);
   //Creates a new instance of FranchiseLocation
   let newFranchiseLocation = new FranchiseLocation(newLocationName, newMinCust, newMaxCust, newAveOrderSize);
   allFranchisesArr.push(newFranchiseLocation);
+  newFranchiseLocation.calcRandNumOfCust();
   newFranchiseLocation.calcHourlySales();
   newFranchiseLocation.calcSumOfHourlySales();
   newFranchiseLocation.renderTable();
