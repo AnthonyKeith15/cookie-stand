@@ -2,7 +2,9 @@ table, td, th {
   border: 1px solid rgb(112, 159, 165);
 }
 table {
-  margin: 1rem;
+  margin: auto;
+  margin-top: 30px;
+  width: 80vw;
 }
 td, th {
   padding: 1rem;
@@ -12,4 +14,18 @@ thead th {
 }
 tfoot {
   background-color: rgba(112, 159, 165, .1);
+}
+
+fieldset{
+  width: 80vw;
+  margin: auto;
+}
+
+fieldset button {
+  background-color: blue;
+  color: pink;
+}
+
+fieldset label {
+  color: blue;
 }
