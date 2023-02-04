@@ -1,3 +1,12 @@
+:root {
+  --primaryColor: #8f5e2f;
+  --secondaryColor: #d3905e;
+  --accentColor: #f5f0e9;
+    font-family: 'Itim', cursive, sans-serif;
+}
+body{
+  background-color: bisque;
+}
 table, td, th {
   border: 1px solid rgb(112, 159, 165);
 }
@@ -6,11 +15,20 @@ table {
   margin-top: 30px;
   width: 80vw;
 }
+
+td {
+  font-family: Arial, sans-serif;
+  background-color: var(--accentColor);
+}
 td, th {
   padding: 1rem;
 }
+th {
+  background-color: #8f5e2f;
+}
 thead th {
   font-weight: bold;
+  background-color: var(--secondaryColor);
 }
 tfoot {
   background-color: rgba(112, 159, 165, .1);
